@@ -1,5 +1,5 @@
 class TadpolesController < ApplicationController
-  before_action :set_tadpole, only: [:show, :edit, :update, :destroy]
+  before_action :set_tadpole, only: [:show, :edit, :update, :destroy, :evolve]
 
   def index
     @tadpoles = Tadpole.all
@@ -38,7 +38,15 @@ class TadpolesController < ApplicationController
     end
   end
 
-  #TODO: Tadpoles can evolve into Frogs
+  def evolve
+    @frog_parent = Frog.find(@tadpole.frog_id)
+    Frog.create(
+      :name => @tadpole.name,
+      :color => @tadpole.color,
+      :pond_id => @frog_parent.pond_id)
+    @tadpole.destroy
+    redirect_to frogs_path
+  end
 
   private
     def set_tadpole

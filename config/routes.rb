@@ -8,6 +8,8 @@ PollywogRanchRailsRuby003::Application.routes.draw do
     resources :tadpoles, only: [:new]
   end
 
+  get 'tadpoles/:id/evolve' => 'tadpoles#evolve', as: 'evolve_tadpole'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
