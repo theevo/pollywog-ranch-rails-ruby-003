@@ -1,4 +1,4 @@
 <h1>Tadpoles</h1>
 <% @tadpoles.each do |tadpole| %>
-  <p><a href="/tadpoles/<%= tadpole.id %>"><%= tadpole.name %></a></p>
+  <p><%= link_to tadpole.name, tadpole_path(tadpole) %></p>
 <% end %>
