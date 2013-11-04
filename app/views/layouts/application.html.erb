@@ -1,12 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>PollywogRanchRailsRuby003</title>
+  <title>Pollywog Ranch ON RAILS</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <nav>
+    <a href="/ponds">Ponds</a> | 
+    <a href="/frogs">Frogs</a> | 
+    <a href="/tadpoles">Tadpoles</a>
+  </nav>
 
 <%= yield %>
 

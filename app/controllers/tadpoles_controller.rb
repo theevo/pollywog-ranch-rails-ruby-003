@@ -1,0 +1,2 @@
+class TadpoleController < ApplicationController
+end
