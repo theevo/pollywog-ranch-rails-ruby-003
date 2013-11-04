@@ -1,0 +1,29 @@
+<%= form_for(@frog) do |f| %>
+  <% if @frog.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@frog.errors.count, "error") %> prohibited this frog from being saved:</h2>
+
+      <ul>
+      <% @frog.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :color %><br>
+    <%= f.text_area :color %>
+  </div>
+  <div class="field">
+    <%= f.label :pond_id %><br>
+    <%= f.collection_select(:pond_id, @ponds, :id, :name) %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
