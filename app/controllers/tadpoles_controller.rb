@@ -12,8 +12,8 @@ class TadpolesController < ApplicationController
   end
 
   def new
-    @ponds = Pond.all
-    @tadpole = Tadpole.new
+    @frog = Frog.find(params[:frog_id])
+    @tadpole = Tadpole.new(:frog_id => @frog.id)
     'tadpoles#new'
   end
 
@@ -27,7 +27,7 @@ class TadpolesController < ApplicationController
 
   def update
     @tadpole.update(valid_tadpole_params)
-    redirect_to tadpoles_path
+    redirect_to tadpole_path
   end
 
   def destroy

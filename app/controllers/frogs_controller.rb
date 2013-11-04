@@ -39,11 +39,6 @@ class FrogsController < ApplicationController
     end
   end
 
-  # TODO: Frogs can create new tadpoles
-  # get '/frogs/:id/tadpoles/new' do
-  #   '/tadpoles/new'
-  # end
-
   private
     def set_frog
       @frog = Frog.find(params[:id])

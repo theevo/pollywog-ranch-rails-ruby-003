@@ -1,8 +1,12 @@
 PollywogRanchRailsRuby003::Application.routes.draw do
   root 'welcome#index'
   resources :ponds
-  resources :frogs #, only: [:index, :create, :new, :show, :edit, :update, :destroy]
-  resources :tadpoles
+  resources :frogs
+  resources :tadpoles, only: [:index, :create, :show, :edit, :update, :destroy]
+
+  resources :frogs do
+    resources :tadpoles, only: [:new]
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

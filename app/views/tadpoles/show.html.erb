@@ -3,6 +3,6 @@
 <p>Parent: <a href="/frogs/<%= @tadpole.frog.id %>"><%= @tadpole.frog.name %></a></p>
 <p>Lives: <a href="/ponds/<%= @tadpole.frog.pond.id %>"><%= @tadpole.frog.pond.name %></a></p>
 <p><strong><a href="/tadpoles/<%= @tadpole.id %>/evolve">Evolve to frog</a></strong></p>
-<%= link_to 'Back', tadpoles_path =%> | 
-<%= link_to 'Edit', edit_tadpole_path =%> | 
-<%= link_to 'Delete', tadpole_path, method: :delete =%>
+<%= link_to 'Back', tadpoles_path %> | 
+<%= link_to 'Edit', edit_tadpole_path %> | 
+<%= link_to 'Delete', tadpole_path, method: :delete %>
